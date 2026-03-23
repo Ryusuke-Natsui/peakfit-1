@@ -1,0 +1,76 @@
+[
+  {
+    "id": "spectroscopy-workflow",
+    "title": "分光データの基本ワークフロー",
+    "targetDomain": "spectroscopy",
+    "summary": "ノイズ低減、ベースライン確認、モデル選択、残差確認の順で進める基本手順。",
+    "steps": [
+      "元データを保持したまま複製を作る",
+      "必要なら平滑化を試す",
+      "ベースライン補正の有無を比較する",
+      "Gaussian / Lorentzian / Voigt 系モデル候補を比較する",
+      "自動ピーク配置を使って初期値を作る",
+      "残差を見て手動調整する"
+    ],
+    "decisionPoints": [
+      "ピークが鋭いか、裾を引くか",
+      "隠れピークがありそうか",
+      "背景がピークと分離できるか"
+    ],
+    "relatedFeatures": [
+      "smoothing",
+      "baseline-subtraction",
+      "peak-models",
+      "residual-inspection"
+    ]
+  },
+  {
+    "id": "chromatography-workflow",
+    "title": "クロマトグラフィーの基本ワークフロー",
+    "targetDomain": "chromatography",
+    "summary": "非対称ピークを意識しながら、背景補正とピークモデル選択を行う。",
+    "steps": [
+      "保持時間とピークの非対称性を確認する",
+      "必要な場合のみ平滑化を適用する",
+      "背景を補正する",
+      "非対称ピークを扱えるモデル候補を検討する",
+      "自動ピーク配置で初期値を置く",
+      "面積と分離度を重点的に確認する"
+    ],
+    "decisionPoints": [
+      "肩ピークがあるか",
+      "テーリングが強いか",
+      "定量対象が面積中心か"
+    ],
+    "relatedFeatures": [
+      "baseline-subtraction",
+      "peak-models",
+      "automatic-peak-placement",
+      "report-output"
+    ]
+  },
+  {
+    "id": "electrophoresis-workflow",
+    "title": "電気泳動の基本ワークフロー",
+    "targetDomain": "electrophoresis",
+    "summary": "重なったバンドの分離を意識しながら、ピーク数と背景を丁寧に調整する。",
+    "steps": [
+      "対象バンドと周辺ノイズを確認する",
+      "必要なら前処理で見やすくする",
+      "背景の影響を確認する",
+      "自動ピーク配置を実行する",
+      "重なりバンドを手動で追い込む",
+      "レポート用にピークごとの結果を整理する"
+    ],
+    "decisionPoints": [
+      "バンド数が見た目より多い可能性があるか",
+      "背景とピークの境界が曖昧か"
+    ],
+    "relatedFeatures": [
+      "automatic-peak-placement",
+      "manual-graphical-fit",
+      "baseline-subtraction",
+      "report-output"
+    ]
+  }
+]

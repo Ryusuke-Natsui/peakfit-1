@@ -1,0 +1,169 @@
+[
+  {
+    "id": "automatic-peak-placement",
+    "title": "Automatic Peak Placement",
+    "category": "Peak Finding",
+    "summary": "重なったピークや隠れたピークを見つけるための自動ピーク配置機能。",
+    "whenToUse": "ピーク数が明確でないとき、見た目だけでは分離しにくいとき。",
+    "pitfalls": [
+      "自動結果をそのまま確定せず、残差や実測との整合性を確認する。",
+      "ノイズが多い場合は先に平滑化やベースライン補正を検討する。"
+    ],
+    "relatedFeatures": [
+      "smoothing",
+      "baseline-subtraction",
+      "manual-graphical-fit"
+    ],
+    "manualRefs": [
+      "TODO: マニュアルの該当ページを設定"
+    ],
+    "tags": [
+      "automatic",
+      "peak",
+      "placement",
+      "hidden peaks"
+    ]
+  },
+  {
+    "id": "baseline-subtraction",
+    "title": "Baseline Subtraction",
+    "category": "Baseline",
+    "summary": "バックグラウンド成分を差し引いて、ピークの高さや面積の定量を安定させる。",
+    "whenToUse": "ベースラインが傾いている、ゆっくり変動する背景があるとき。",
+    "pitfalls": [
+      "背景を引きすぎるとピーク形状が崩れる。",
+      "ピークと背景の境界が曖昧な場合は複数の方法を比較する。"
+    ],
+    "relatedFeatures": [
+      "automatic-peak-placement",
+      "peak-models"
+    ],
+    "manualRefs": [
+      "TODO: マニュアルの該当ページを設定"
+    ],
+    "tags": [
+      "baseline",
+      "background",
+      "correction"
+    ]
+  },
+  {
+    "id": "smoothing",
+    "title": "Smoothing",
+    "category": "Preprocessing",
+    "summary": "ノイズ低減のための前処理。ピーク検出前の視認性や安定性を上げる。",
+    "whenToUse": "データがノイジーでピーク位置の判定が不安定なとき。",
+    "pitfalls": [
+      "平滑化しすぎると鋭いピークが丸くなる。",
+      "元データも残して比較できる状態にしておく。"
+    ],
+    "relatedFeatures": [
+      "automatic-peak-placement",
+      "baseline-subtraction"
+    ],
+    "manualRefs": [
+      "TODO: マニュアルの該当ページを設定"
+    ],
+    "tags": [
+      "noise",
+      "preprocessing",
+      "smooth"
+    ]
+  },
+  {
+    "id": "peak-models",
+    "title": "Peak Models",
+    "category": "Modeling",
+    "summary": "Gaussian、Lorentzian、Voigt などのピークモデルを用途別に選ぶ。",
+    "whenToUse": "ピーク形状が対象分野ごとに異なり、モデル選択が結果に効くとき。",
+    "pitfalls": [
+      "モデルを増やしすぎると過剰適合になりやすい。",
+      "データの物理的背景に合うモデルを優先する。"
+    ],
+    "relatedFeatures": [
+      "manual-graphical-fit",
+      "report-output"
+    ],
+    "manualRefs": [
+      "TODO: マニュアルの該当ページを設定"
+    ],
+    "tags": [
+      "gaussian",
+      "lorentzian",
+      "voigt",
+      "fit"
+    ]
+  },
+  {
+    "id": "manual-graphical-fit",
+    "title": "Manual Graphical Fit",
+    "category": "Fitting",
+    "summary": "自動配置で不十分なケースに対して、ピーク位置や幅を手動で追い込む。",
+    "whenToUse": "複雑な重なりや自動配置の失敗を修正したいとき。",
+    "pitfalls": [
+      "初期値に引っ張られやすいので、変更前後の差を比較する。",
+      "ピーク数を増やしすぎない。"
+    ],
+    "relatedFeatures": [
+      "automatic-peak-placement",
+      "peak-models",
+      "residual-inspection"
+    ],
+    "manualRefs": [
+      "TODO: マニュアルの該当ページを設定"
+    ],
+    "tags": [
+      "manual",
+      "graphical",
+      "fit",
+      "anchor"
+    ]
+  },
+  {
+    "id": "residual-inspection",
+    "title": "Residual Inspection",
+    "category": "Validation",
+    "summary": "残差を見て、見落としたピークや不適切なモデルを判断する。",
+    "whenToUse": "フィット結果が見た目には良いが、信頼してよいか判断したいとき。",
+    "pitfalls": [
+      "残差が系統的に偏る場合はモデルかピーク数を見直す。",
+      "視覚だけでなく定量指標も併用する。"
+    ],
+    "relatedFeatures": [
+      "manual-graphical-fit",
+      "automatic-peak-placement"
+    ],
+    "manualRefs": [
+      "TODO: マニュアルの該当ページを設定"
+    ],
+    "tags": [
+      "residual",
+      "validation",
+      "quality"
+    ]
+  },
+  {
+    "id": "report-output",
+    "title": "Report & Output",
+    "category": "Reporting",
+    "summary": "ピーク中心、幅、面積などの結果をレポートや図として出力する。",
+    "whenToUse": "解析結果を論文、報告書、社内記録へ転用するとき。",
+    "pitfalls": [
+      "単位や軸ラベル、モデル名の記録を忘れない。",
+      "最終図だけでなく解析条件も保存する。"
+    ],
+    "relatedFeatures": [
+      "peak-models",
+      "residual-inspection"
+    ],
+    "manualRefs": [
+      "TODO: マニュアルの該当ページを設定"
+    ],
+    "tags": [
+      "report",
+      "export",
+      "area",
+      "width"
+    ]
+  }
+]

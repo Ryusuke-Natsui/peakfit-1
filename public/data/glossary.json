@@ -1,0 +1,90 @@
+[
+  {
+    "term": "Baseline",
+    "definition": "ピーク以外の背景信号。定量前に補正対象になることが多い。",
+    "relatedTerms": [
+      "Residual",
+      "Smoothing"
+    ],
+    "manualRefs": [
+      "TODO: マニュアルの該当ページを設定"
+    ]
+  },
+  {
+    "term": "Residual",
+    "definition": "実測値とフィット値の差。モデルの妥当性確認に使う。",
+    "relatedTerms": [
+      "Baseline",
+      "Fit"
+    ],
+    "manualRefs": [
+      "TODO: マニュアルの該当ページを設定"
+    ]
+  },
+  {
+    "term": "Voigt",
+    "definition": "Gaussian と Lorentzian の性質を組み合わせたピークモデル。",
+    "relatedTerms": [
+      "Gaussian",
+      "Lorentzian"
+    ],
+    "manualRefs": [
+      "TODO: マニュアルの該当ページを設定"
+    ]
+  },
+  {
+    "term": "Gaussian",
+    "definition": "左右対称な分布を前提にした代表的なピークモデル。",
+    "relatedTerms": [
+      "Lorentzian",
+      "Voigt"
+    ],
+    "manualRefs": [
+      "TODO: マニュアルの該当ページを設定"
+    ]
+  },
+  {
+    "term": "Lorentzian",
+    "definition": "裾の広がりが比較的大きいピーク形状を表すモデル。",
+    "relatedTerms": [
+      "Gaussian",
+      "Voigt"
+    ],
+    "manualRefs": [
+      "TODO: マニュアルの該当ページを設定"
+    ]
+  },
+  {
+    "term": "Peak Area",
+    "definition": "ピークの面積。定量値として使われることが多い。",
+    "relatedTerms": [
+      "Peak Height",
+      "Width"
+    ],
+    "manualRefs": [
+      "TODO: マニュアルの該当ページを設定"
+    ]
+  },
+  {
+    "term": "Peak Height",
+    "definition": "ピーク頂点の高さ。条件によって面積より不安定なことがある。",
+    "relatedTerms": [
+      "Peak Area",
+      "Width"
+    ],
+    "manualRefs": [
+      "TODO: マニュアルの該当ページを設定"
+    ]
+  },
+  {
+    "term": "Width",
+    "definition": "ピークの広がり。モデル選択や分離度評価に関係する。",
+    "relatedTerms": [
+      "Peak Height",
+      "Peak Area"
+    ],
+    "manualRefs": [
+      "TODO: マニュアルの該当ページを設定"
+    ]
+  }
+]
